@@ -22,6 +22,7 @@ export function Food ({ food, handleEditFood, handleDelete }: FoodProps) {
   useEffect(() => {
     setIsAvailable(food.available)
   },[food])
+  
   const toggleAvailable = async () => {
     await api.put(`/foods/${food.id}`, {
       ...food,
